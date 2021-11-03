@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [0],
     'import/extensions': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
 };
