@@ -1,12 +1,12 @@
 import React from 'react';
 import { Section } from 'rbx';
 import './App.scss';
-import HomeScreen from './screens/home';
+import Routes from './routes';
 
 const App = () => (
   <>
     <Section>
-      <HomeScreen />
+      <Routes />
     </Section>
   </>
 );
