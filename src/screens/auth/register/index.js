@@ -5,6 +5,7 @@ import {
 import Header from '../../../components/header';
 import logoImage from '../../../assets/images/logo.png';
 import '../../../styles/auth.scss';
+import RegisterForm from '../../../components/auth/register_form';
 
 const RegisterScreen = () => (
   <>
@@ -32,6 +33,7 @@ const RegisterScreen = () => (
                       </Title>
                     </Column>
                   </Column.Group>
+                  <RegisterForm />
                 </Section>
               </Card.Content>
             </Card>
