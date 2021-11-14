@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
@@ -44,6 +45,23 @@ function HeaderLogged(props) {
       </Navbar.Brand>
 
       <Navbar.Menu>
+        <Navbar.Segment
+          as="div"
+          className="navbar-item navbar-start"
+          align="start"
+        >
+          <Navbar.Item as="div">
+            <Button
+              className="open-button"
+              color="white"
+              outlined
+              onClick={() => props.setIsOpen(true)}
+            >
+              <FontAwesomeIcon icon={faList} />
+            </Button>
+          </Navbar.Item>
+        </Navbar.Segment>
+
         <Navbar.Segment
           as="div"
           className="navbar-item navbar-end"
