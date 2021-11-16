@@ -5,7 +5,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {
-  Column, Tag, Title, List,
+  Column, Tag, Title, List, Button,
 } from 'rbx';
 import Moment from 'moment';
 
@@ -34,6 +34,18 @@ function ListNotes(props) {
             <Title size={6} subtitle spaced={false}>
               {item.body.replace(/(<([^>]+)>)/gi, '').substring(0, 30)}
             </Title>
+
+            <Column size={2}>
+              <Button
+                state="active"
+                color="custom-purple"
+                outlined
+                size="small"
+                onClick={() => props.createNote()}
+              >
+                Notes +
+              </Button>
+            </Column>
 
             <Column.Group breakpoint="mobile">
               <Column size={10}>
