@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable eqeqeq */
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
@@ -12,6 +13,7 @@ import { push as Menu } from 'react-burger-menu';
 import { Column } from 'rbx';
 import List from './list';
 import Editor from './editor';
+import Search from './search';
 import NotesService from '../../services/notes';
 
 function Notes(props) {
@@ -51,6 +53,11 @@ function Notes(props) {
     setCurrentNote(updatedNote.data);
   };
 
+  const searchNotes = async (query) => {
+    const response = await NotesService.search(query);
+    setNotes(response.data);
+  };
+
   const selectNote = (id) => {
     const note = notes.find((note) => note._id == id);
     setCurrentNote(note);
@@ -74,7 +81,7 @@ function Notes(props) {
         >
           <Column.Group>
             <Column size={10} offset={1}>
-              Search...
+              <Search searchNotes={searchNotes} fetchNotes={fetchNotes} />
             </Column>
           </Column.Group>
           <List
