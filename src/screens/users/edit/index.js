@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  Column, Section, Title, Container, Card, Button,
+  Column, Section, Title, Container, Card, Button, 
 } from 'rbx';
 import '../../../styles/users.scss';
 import UsersEditForm from '../../../components/users/user_edit_form';
+import UsersEditPasswordForm from '../../../components/users/user_edit_password_form';
 import HeaderLogged from '../../../components/header_logged';
 
 const UserEditScreen = () => (
@@ -30,7 +31,9 @@ const UserEditScreen = () => (
               Password
             </Title>
             <Card>
-              <Card.Content>Users Edit Password Form...</Card.Content>
+              <Card.Content>
+                <UsersEditPasswordForm />
+              </Card.Content>
             </Card>
           </Column>
         </Column.Group>
