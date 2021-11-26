@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Column, Section, Title, Container, Card, Button, 
+  Column, Section, Title, Container, Card, Button,
 } from 'rbx';
 import '../../../styles/users.scss';
 import UsersEditForm from '../../../components/users/user_edit_form';
 import UsersEditPasswordForm from '../../../components/users/user_edit_password_form';
+import UsersDelete from '../../../components/users/user_delete';
 import HeaderLogged from '../../../components/header_logged';
 
 const UserEditScreen = () => (
@@ -39,7 +40,7 @@ const UserEditScreen = () => (
         </Column.Group>
         <Column.Group centered>
           <Column size={4} className="has-text-right">
-            Users Delete Button...
+            <UsersDelete />
           </Column>
         </Column.Group>
       </Container>
