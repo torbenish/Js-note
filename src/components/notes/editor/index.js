@@ -1,6 +1,5 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable quote-props */
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable eqeqeq */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 
@@ -13,7 +12,7 @@ function Editor(props) {
 
   const updateNote = (content) => {
     const title = content.replace(/(<([^>]+)>)/ig, '').slice(0, 30);
-    props.updateNote(props.note, { 'title': title, 'body': content });
+    props.updateNote(props.note, { title, body: content });
   };
 
   const handleChange = (content, delta, source) => {
@@ -30,10 +29,10 @@ function Editor(props) {
 
   const modules = {
     toolbar: [
-      [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+      [{ header: '1' }, { header: '2' }, { font: [] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' },
-        { 'indent': '-1' }, { 'indent': '+1' }],
+      [{ list: 'ordered' }, { list: 'bullet' },
+        { indent: '-1' }, { indent: '+1' }],
       ['link'],
       ['clean'],
     ],
@@ -41,7 +40,7 @@ function Editor(props) {
 
   return (
     <>
-      <ReactQuill value={currentContent} onChange={handleChange} modules={modules} />
+      <ReactQuill value={currentContent} modules={modules} onChange={handleChange} />
     </>
   );
 }
